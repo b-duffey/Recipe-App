@@ -15,6 +15,10 @@ function RecipeCreate({ createRecipe }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    if (!name || !cuisine || !photo || !ingredients || !preparation){
+      alert("Please fill out all fields prior to submission.")
+      return;
+    }
     createRecipe({ name, cuisine, photo, ingredients, preparation });
     setName("");
     setCuisine("");
@@ -85,7 +89,7 @@ function RecipeCreate({ createRecipe }) {
         />
       </div>
 
-      <button type="submit">Create</button>
+      <button type="submit" style={styles.button}>Create</button>
     </form>
   );
 }
@@ -93,12 +97,15 @@ function RecipeCreate({ createRecipe }) {
 const styles = {
   form: {
     display: "flex",
-    flexDirection: "row",
+    flexDirection: "column",
     maxWidth: "100%",
   },
   formGroup: {
     marginRight: "15px", // Adjust the margin between form groups
     marginBottom: "15px",
+  },
+  button: {
+    maxWidth: "150px",
   },
 };
 
