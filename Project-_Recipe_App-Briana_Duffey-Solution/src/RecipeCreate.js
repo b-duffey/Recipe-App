@@ -15,8 +15,8 @@ function RecipeCreate({ createRecipe }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (!name || !cuisine || !photo || !ingredients || !preparation){
-      alert("Please fill out all fields prior to submission.")
+    if (!name || !cuisine || !photo || !ingredients || !preparation) {
+      alert("Please fill out all fields prior to submission.");
       return;
     }
     createRecipe({ name, cuisine, photo, ingredients, preparation });
@@ -30,7 +30,6 @@ function RecipeCreate({ createRecipe }) {
   return (
     <form name="create" onSubmit={handleSubmit} style={styles.form}>
       <div style={styles.formGroup}>
-        <label htmlFor="name">Name:</label>
         <input
           id="name"
           type="text"
@@ -42,7 +41,6 @@ function RecipeCreate({ createRecipe }) {
       </div>
 
       <div style={styles.formGroup}>
-        <label htmlFor="cuisine">Cuisine:</label>
         <input
           id="cuisine"
           type="text"
@@ -54,7 +52,6 @@ function RecipeCreate({ createRecipe }) {
       </div>
 
       <div style={styles.formGroup}>
-        <label htmlFor="photo">Photo URL:</label>
         <input
           id="photo"
           type="text"
@@ -66,7 +63,7 @@ function RecipeCreate({ createRecipe }) {
       </div>
 
       <div style={styles.formGroup}>
-        <label htmlFor="ingredients">Ingredients:</label>
+ 
         <textarea
           id="ingredients"
           type="text"
@@ -78,7 +75,6 @@ function RecipeCreate({ createRecipe }) {
       </div>
 
       <div style={styles.formGroup}>
-        <label htmlFor="preparation">Preparation:</label>
         <textarea
           id="preparation"
           type="text"
@@ -89,7 +85,9 @@ function RecipeCreate({ createRecipe }) {
         />
       </div>
 
-      <button type="submit" style={styles.button}>Create</button>
+      <button type="submit" style={styles.button}>
+        Create
+      </button>
     </form>
   );
 }
@@ -99,13 +97,26 @@ const styles = {
     display: "flex",
     flexDirection: "row",
     maxWidth: "100%",
+    tableLayout: "fixed",
+    width: "100%",
+    borderCollapse: "collapse",
+    overflow: "hidden",
+    boxShadow: "0 0 5px rgba(0, 0, 0, 0.1)",
+    backgroundColor: "#fff0c7", // Set the background color for odd rows
+    
+
   },
   formGroup: {
     marginRight: "15px", // Adjust the margin between form groups
     marginBottom: "15px",
+    marginTop: "10px",
+    fontFamily: 'Rock Salt',
+
   },
   button: {
+    alignSelf: "center",
     maxWidth: "150px",
+    marginLeft: "75px",
   },
 };
 
