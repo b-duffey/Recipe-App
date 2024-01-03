@@ -97,7 +97,7 @@ function RecipeCreate({ createRecipe }) {
 const styles = {
   form: {
     display: "flex",
-    flexDirection: "column",
+    flexDirection: "row",
     maxWidth: "100%",
   },
   formGroup: {
